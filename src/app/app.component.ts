@@ -56,4 +56,21 @@ export class AppComponent {
 			this.newTodoText = '';
 		}
   }
+
+  viewCompleted() {
+    this.todoStore.todos.forEach(
+      (t: Todo) => t.hidden = !t.completed);
+  }
+
+  viewNotCompleted() {
+    this.todoStore.todos.forEach(
+      (t: Todo) => t.hidden = t.completed);
+  }
+
+  viewAll() {
+    this.todoStore.todos.forEach(
+      (t: Todo) => t.hidden = false);
+  }
+
+
 }
